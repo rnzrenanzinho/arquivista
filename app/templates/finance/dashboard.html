@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Painel Financeiro</h1>
+
+<h2>Saldo por Conta</h2>
+
+{% if balances and balances|length > 0 %}
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:15px;">
+    {% for b in balances %}
+      <div class="flash success">
+        <strong>{{ b.name }}</strong><br>
+        R$ {{ b.balance }}
+      </div>
+    {% endfor %}
+  </div>
+{% else %}
+  <p>Nenhuma conta cadastrada ainda.</p>
+{% endif %}
+
+<hr style="margin:30px 0;">
+
+<p>
+  <a class="btn" href="{{ url_for('finance.transaction_new') }}">+ Nova transação</a>
+  <a class="btn" href="{{ url_for('finance.transactions') }}" style="margin-left:8px;">Ver lançamentos</a>
+</p>
+
+{% if current_user.is_admin %}
+  <p style="margin-top:15px;">
+    <a href="{{ url_for('finance.units') }}">Unidades</a> |
+    <a href="{{ url_for('finance.accounts') }}">Contas</a> |
+    <a href="{{ url_for('finance.categories') }}">Categorias</a>
+  </p>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Lançamentos</h1>
+
+<p>
+  <a class="btn" href="{{ url_for('finance.transaction_new') }}">+ Novo lançamento</a>
+</p>
+
+<table style="width:100%;border-collapse:collapse;">
+  <thead>
+    <tr>
+      <th style="text-align:left;border-bottom:1px solid #2b3347;padding:8px;">Data</th>
+      <th style="text-align:left;border-bottom:1px solid #2b3347;padding:8px;">Tipo</th>
+      <th style="text-align:left;border-bottom:1px solid #2b3347;padding:8px;">Unidade</th>
+      <th style="text-align:left;border-bottom:1px solid #2b3347;padding:8px;">Conta</th>
+      <th style="text-align:left;border-bottom:1px solid #2b3347;padding:8px;">Categoria</th>
+      <th style="text-align:left;border-bottom:1px solid #2b3347;padding:8px;">Valor</th>
+      <th style="text-align:left;border-bottom:1px solid #2b3347;padding:8px;">Descrição</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for r in rows %}
+    <tr>
+      <td style="padding:8px;border-bottom:1px solid #1e2433;">{{ r.date }}</td>
+      <td style="padding:8px;border-bottom:1px solid #1e2433;">{{ "Entrada" if r.flow=="income" else "Saída" }}</td>
+      <td style="padding:8px;border-bottom:1px solid #1e2433;">{{ r.unit.name if r.unit else "" }}</td>
+      <td style="padding:8px;border-bottom:1px solid #1e2433;">{{ r.account.name if r.account else "" }}</td>
+      <td style="padding:8px;border-bottom:1px solid #1e2433;">{{ r.category.name if r.category else "" }}</td>
+      <td style="padding:8px;border-bottom:1px solid #1e2433;">R$ {{ cents_to_brl(r.amount_cents) }}</td>
+      <td style="padding:8px;border-bottom:1px solid #1e2433;">{{ r.description or "" }}</td>
+    </tr>
+    {% else %}
+      <tr><td colspan="7" style="padding:10px;">Sem lançamentos.</td></tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}

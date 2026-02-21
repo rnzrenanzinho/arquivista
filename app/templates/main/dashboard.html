@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>Dashboard</h1>
+  <p>Logado como: <strong>{{ user.username }}</strong> {% if user.is_admin %}(admin){% endif %}</p>
+  <p>Este é o núcleo inicial. A partir daqui vamos acoplar: finanças, estoque, logs e automações.</p>
+{% endblock %}

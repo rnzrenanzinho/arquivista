@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>Contas (admin)</h1>
+
+  <p>
+    <a class="btn" href="{{ url_for('finance.account_new') }}">+ Nova conta</a>
+  </p>
+
+  <table style="width:100%;border-collapse:collapse;">
+    <thead>
+      <tr>
+        <th style="text-align:left;padding:8px;border-bottom:1px solid #2b3347;">Nome</th>
+        <th style="text-align:left;padding:8px;border-bottom:1px solid #2b3347;">Tipo</th>
+        <th style="text-align:left;padding:8px;border-bottom:1px solid #2b3347;">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for a in rows %}
+      <tr>
+        <td style="padding:8px;border-bottom:1px solid #1e2433;">{{ a.name }}</td>
+        <td style="padding:8px;border-bottom:1px solid #1e2433;">{{ a.kind }}</td>
+        <td style="padding:8px;border-bottom:1px solid #1e2433;">{{ "Ativa" if a.is_active else "Inativa" }}</td>
+      </tr>
+      {% else %}
+      <tr><td colspan="3" style="padding:10px;">Nenhuma conta cadastrada.</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

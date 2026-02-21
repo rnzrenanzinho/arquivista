@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>Nova conta</h1>
+
+  <form method="post">
+    {{ form.hidden_tag() }}
+
+    <label>Nome</label>
+    {{ form.name(class_="input", placeholder="Ex: Caixa RNZ") }}
+
+    <label>Tipo</label>
+    {{ form.kind(class_="input") }}
+
+    <label style="display:flex;gap:8px;align-items:center;margin:10px 0;">
+      {{ form.is_active() }} Ativa
+    </label>
+
+    {{ form.submit(class_="btn") }}
+  </form>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>Bem-vindo ao Arquivista</h1>
+  <p>Base profissional ativa: Blueprints, Login, Banco e Migrações.</p>
+  <p>
+    {% if current_user.is_authenticated %}
+      Ir para <a href="{{ url_for('main.dashboard') }}">Dashboard</a>.
+    {% else %}
+      <a href="{{ url_for('auth.login') }}">Entrar</a> ou <a href="{{ url_for('auth.register') }}">Criar conta</a>.
+    {% endif %}
+  </p>
+{% endblock %}

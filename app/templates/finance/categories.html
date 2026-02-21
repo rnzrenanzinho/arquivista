@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>Categorias (admin)</h1>
+
+  <p>
+    <a class="btn" href="{{ url_for('finance.category_new') }}">+ Nova categoria</a>
+  </p>
+
+  <table style="width:100%;border-collapse:collapse;">
+    <thead>
+      <tr>
+        <th style="text-align:left;padding:8px;border-bottom:1px solid #2b3347;">Tipo</th>
+        <th style="text-align:left;padding:8px;border-bottom:1px solid #2b3347;">Nome</th>
+        <th style="text-align:left;padding:8px;border-bottom:1px solid #2b3347;">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for c in rows %}
+      <tr>
+        <td style="padding:8px;border-bottom:1px solid #1e2433;">
+          {{ "Entrada" if c.flow == "income" else "Saída" }}
+        </td>
+        <td style="padding:8px;border-bottom:1px solid #1e2433;">
+          {{ c.name }}
+        </td>
+        <td style="padding:8px;border-bottom:1px solid #1e2433;">
+          {{ "Ativa" if c.is_active else "Inativa" }}
+        </td>
+      </tr>
+      {% else %}
+      <tr>
+        <td colspan="3" style="padding:10px;">Nenhuma categoria cadastrada.</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+{% endblock %}

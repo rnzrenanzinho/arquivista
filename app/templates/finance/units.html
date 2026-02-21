@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>Unidades (admin)</h1>
+
+  <p>
+    <a class="btn" href="{{ url_for('finance.unit_new') }}">+ Nova unidade</a>
+  </p>
+
+  <table style="width:100%;border-collapse:collapse;">
+    <thead>
+      <tr>
+        <th style="text-align:left;padding:8px;border-bottom:1px solid #2b3347;">Nome</th>
+        <th style="text-align:left;padding:8px;border-bottom:1px solid #2b3347;">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for u in rows %}
+      <tr>
+        <td style="padding:8px;border-bottom:1px solid #1e2433;">{{ u.name }}</td>
+        <td style="padding:8px;border-bottom:1px solid #1e2433;">{{ "Ativa" if u.is_active else "Inativa" }}</td>
+      </tr>
+      {% else %}
+      <tr><td colspan="2" style="padding:10px;">Nenhuma unidade cadastrada.</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

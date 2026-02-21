@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Novo lançamento</h1>
+
+<form method="post">
+  {{ form.hidden_tag() }}
+
+  <div style="margin-bottom:12px;">
+    <label>Tipo</label><br>
+    {{ form.flow(class_="input") }}
+  </div>
+
+  <div style="margin-bottom:12px;">
+    <label>Data</label><br>
+    <input 
+      type="date"
+      name="{{ form.date.name }}"
+      id="{{ form.date.id }}"
+      class="input"
+      value="{{ form.date.data.strftime('%Y-%m-%d') if form.date.data else '' }}"
+      required
+    >
+  </div>
+
+  <div style="margin-bottom:12px;">
+    <label>Valor (R$)</label><br>
+    {{ form.amount(class_="input", placeholder="Ex: 10,50") }}
+  </div>
+
+  <div style="margin-bottom:12px;">
+    <label>Unidade (Centro de Custo)</label><br>
+    {{ form.unit_id(class_="input") }}
+  </div>
+
+  <div style="margin-bottom:12px;">
+    <label>Conta</label><br>
+    {{ form.account_id(class_="input") }}
+  </div>
+
+  <div style="margin-bottom:12px;">
+    <label>Categoria</label><br>
+    {{ form.category_id(class_="input") }}
+  </div>
+
+  <div style="margin-bottom:12px;">
+    <label>Método (pix/dinheiro/débito/crédito)</label><br>
+    {{ form.payment_method(class_="input") }}
+  </div>
+
+  <div style="margin-bottom:12px;">
+    <label>Descrição</label><br>
+    {{ form.description(class_="input") }}
+  </div>
+
+  <div style="margin-bottom:12px;">
+    <label>Referência (opcional)</label><br>
+    {{ form.reference(class_="input") }}
+  </div>
+
+  <div style="margin-top:18px;">
+    {{ form.submit(class_="btn") }}
+  </div>
+</form>
+
+{% endblock %}

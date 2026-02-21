@@ -1,0 +1,16 @@
+body { font-family: Arial, sans-serif; margin: 0; background: #0f1115; color: #e6e6e6; }
+a { color: #7aa2ff; text-decoration: none; }
+.container { max-width: 980px; margin: 0 auto; padding: 16px; }
+.topbar { background: #161a22; border-bottom: 1px solid #252b3a; }
+.topbar .container { display: flex; align-items: center; justify-content: space-between; }
+.brand a { font-weight: 800; letter-spacing: 2px; }
+nav a { margin-left: 12px; }
+h1 { margin-top: 12px; }
+.input { width: 100%; padding: 10px; margin: 6px 0 14px; border-radius: 8px; border: 1px solid #2b3347; background: #0f1115; color: #e6e6e6; }
+.btn { padding: 10px 14px; border: 0; border-radius: 10px; background: #7aa2ff; color: #0b0d12; font-weight: 700; cursor: pointer; }
+.flash-wrap { margin: 12px 0; }
+.flash { padding: 10px 12px; border-radius: 10px; margin-bottom: 8px; border: 1px solid #2b3347; }
+.flash.success { background: #0d2a1a; }
+.flash.info { background: #0c2230; }
+.flash.warning { background: #2a230d; }
+.flash.danger { background: #2a0d0d; }
