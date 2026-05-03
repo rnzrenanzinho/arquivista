@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Arquivista | Software Imortal{% endblock %}
+
+{% block content %}
+<section class="card">
+  <h2>Software Imortal</h2>
+
+  <h3>Objetivo</h3>
+  <p>{{ software.objetivo }}</p>
+
+  <h3>Prioridade máxima</h3>
+  <p class="destaque">{{ software.prioridade_maxima }}</p>
+
+  <h3>Princípios</h3>
+  <ol>
+    {% for principio in software.principios %}
+      <li>{{ principio }}</li>
+    {% endfor %}
+  </ol>
+
+  <h3>Camadas do ser</h3>
+  <ul>
+    {% for camada, descricao in software.camadas_do_ser.items() %}
+      <li><strong>{{ camada }}:</strong> {{ descricao }}</li>
+    {% endfor %}
+  </ul>
+
+  <h3>Declaração</h3>
+  <p class="citacao">{{ software.declaracao }}</p>
+</section>
+{% endblock %}

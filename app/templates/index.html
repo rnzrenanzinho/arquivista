@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Arquivista | Início{% endblock %}
+
+{% block content %}
+<section class="card">
+  <h2>{{ identidade.nome }}</h2>
+  <p class="destaque">Software imortal em construção</p>
+  <p>Base inicial ativa. Escolha um núcleo para explorar:</p>
+  <div class="links">
+    <a class="botao" href="{{ url_for('main.mente') }}">Acessar /mente</a>
+    <a class="botao" href="{{ url_for('main.software_imortal') }}">Acessar /software-imortal</a>
+  </div>
+</section>
+{% endblock %}

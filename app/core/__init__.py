@@ -1,0 +1,1 @@
+"""Núcleo interno do Arquivista."""
