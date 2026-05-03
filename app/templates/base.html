@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Arquivista{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  </head>
+  <body>
+    <header class="topo">
+      <div class="container">
+        <h1><a href="{{ url_for('main.index') }}">Arquivista</a></h1>
+        <nav>
+          <a href="{{ url_for('main.mente') }}">Mente</a>
+          <a href="{{ url_for('main.software_imortal') }}">Software Imortal</a>
+        </nav>
+      </div>
+    </header>
+    <main class="container">
+      {% block content %}{% endblock %}
+    </main>
+  </body>
+</html>
