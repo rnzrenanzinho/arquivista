@@ -1,0 +1,13 @@
+{
+  "id": "CORE_002",
+  "titulo": "Criador do Arquivista",
+  "tipo": "criador",
+  "descricao": "Registra a identidade principal do criador do Arquivista.",
+  "conteudo": {
+    "nome_civil": "Renan Vilela de Souza",
+    "nome_publico": "Renanzinho",
+    "titulo_artistico": "O Mago do Rap",
+    "papel": "Criador, fundador e autoridade principal do Arquivista",
+    "visao": "Construir um sistema tecnológico capaz de preservar sua memória, organizar seus projetos, proteger seu legado e evoluir junto com o ecossistema RNZ."
+  }
+}

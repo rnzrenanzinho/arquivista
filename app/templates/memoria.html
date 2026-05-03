@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Arquivista | Memória{% endblock %}
+
+{% block content %}
+<section class="card">
+  <h2>Memória do Arquivista</h2>
+  <p>Primeiros COREs internos carregados de arquivos JSON.</p>
+</section>
+
+{% for core in cores %}
+<section class="card">
+  <h3>{{ core.id or 'Sem ID' }}</h3>
+  <p><strong>Título:</strong> {{ core.titulo or 'Sem título' }}</p>
+  <p><strong>Tipo:</strong> {{ core.tipo or 'Sem tipo' }}</p>
+  <p><strong>Descrição:</strong> {{ core.descricao or 'Sem descrição' }}</p>
+  <a class="botao" href="{{ url_for('main.memoria_core', nome_arquivo=core.arquivo) }}">Abrir detalhes</a>
+</section>
+{% else %}
+<section class="card">
+  <p>Nenhum CORE encontrado em <code>data/memoria/</code>.</p>
+</section>
+{% endfor %}
+{% endblock %}

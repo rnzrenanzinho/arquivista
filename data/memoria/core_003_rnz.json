@@ -1,0 +1,20 @@
+{
+  "id": "CORE_003",
+  "titulo": "Ecossistema RNZ",
+  "tipo": "ecossistema",
+  "descricao": "Registra a RNZ como ecossistema central ligado ao Arquivista.",
+  "conteudo": {
+    "nome": "RNZ",
+    "natureza": "Ecossistema de marcas, projetos, empresas, arte, tecnologia e memória",
+    "divisoes_iniciais": [
+      "RNZ Central",
+      "RNZ Burger",
+      "RNZ Pastelaria",
+      "RNZ Records",
+      "RNZ Divulga",
+      "RNZ Tech",
+      "RNZ Motors"
+    ],
+    "funcao_do_arquivista": "Organizar, preservar, conectar e fortalecer todas as áreas da RNZ ao longo do tempo."
+  }
+}

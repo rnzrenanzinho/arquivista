@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Arquivista | CORE{% endblock %}
+
+{% block content %}
+<section class="card">
+  <h2>{{ core.id }}</h2>
+  <p><strong>Título:</strong> {{ core.titulo }}</p>
+  <p><strong>Tipo:</strong> {{ core.tipo }}</p>
+  <p><strong>Descrição:</strong> {{ core.descricao }}</p>
+  <p><strong>Arquivo:</strong> {{ core.arquivo }}</p>
+
+  <h3>Conteúdo completo</h3>
+  <pre>{{ core_formatado }}</pre>
+
+  <a class="botao" href="{{ url_for('main.memoria') }}">Voltar para /memoria</a>
+</section>
+{% endblock %}

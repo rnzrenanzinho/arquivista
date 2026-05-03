@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}Arquivista | Mente{% endblock %}
+
+{% block content %}
+<section class="card">
+  <h2>Mente do Arquivista</h2>
+  <p><strong>Nome:</strong> {{ identidade.nome }}</p>
+  <p><strong>Tipo:</strong> {{ identidade.tipo }}</p>
+
+  <h3>Criador</h3>
+  <ul>
+    <li><strong>Nome civil:</strong> {{ identidade.criador.nome_civil }}</li>
+    <li><strong>Nome público:</strong> {{ identidade.criador.nome_publico }}</li>
+    <li><strong>Título:</strong> {{ identidade.criador.titulo }}</li>
+    <li><strong>Ecossistema:</strong> {{ identidade.criador.ecossistema }}</li>
+  </ul>
+
+  <h3>Missão principal</h3>
+  <p>{{ identidade.missao_principal }}</p>
+
+  <h3>Natureza</h3>
+  <p><strong>Definição:</strong> {{ identidade.natureza.definicao }}</p>
+  <p>{{ identidade.natureza.explicacao }}</p>
+
+  <h3>Valores centrais</h3>
+  <ul>
+    {% for valor in identidade.valores_centrais %}
+      <li>{{ valor }}</li>
+    {% endfor %}
+  </ul>
+
+  <h3>Limites invioláveis</h3>
+  <ul>
+    {% for limite in identidade.limites_inviolaveis %}
+      <li>{{ limite }}</li>
+    {% endfor %}
+  </ul>
+
+  <h3>Frase mestra</h3>
+  <p class="citacao">{{ identidade.frase_mestra }}</p>
+</section>
+{% endblock %}
